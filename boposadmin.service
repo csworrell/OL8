@@ -1,0 +1,12 @@
+[Unit]
+Description=BOPOSAdmin Service
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 480
+RemainAfterExit=yes
+ExecStart=sudo su -c "/etc/rc.d/init.d/BOPOSAdmin start" -s /bin/sh weblogic
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
