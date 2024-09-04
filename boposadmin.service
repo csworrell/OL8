@@ -1,10 +1,6 @@
 [Unit]
 SourcePath=/etc/rc.d/init.d/BOPOSAdmin
 Description=LSB: Oracle BO Weblogic Admin and POS Server Control service.
-Before=multi-user.target
-Before=multi-user.target
-Before=multi-user.target
-Before=graphical.target
 After=network-online.target
 After=gcstartup.service
 After=lockgcstartup.service
@@ -22,3 +18,5 @@ RemainAfterExit=yes
 SuccessExitStatus=5 6
 ExecStart=/etc/rc.d/init.d/BOPOSAdmin start -s /bin/sh weblogic
 ExecStop=/etc/rc.d/init.d/BOPOSAdmin stop -s /bin/sh weblogic
+[Install]
+WantedBy=multi-user.target
